@@ -90,27 +90,27 @@ export function GuiltyMap() {
 
   const filteredViolations = violations.filter((v) => filter === "all" || v.type === filter)
 
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case "critical": return { bg: "bg-severity-critical", text: "text-severity-critical" }
-      case "high": return { bg: "bg-severity-high", text: "text-severity-high" }
-      case "medium": return { bg: "bg-severity-medium", text: "text-severity-medium" }
-      case "low": return { bg: "bg-severity-low", text: "text-severity-low" }
-      default: return { bg: "bg-muted", text: "text-muted-foreground" }
-    }
-  }
+  // const getSeverityColor = (severity: string) => {
+  //   switch (severity) {
+  //     case "critical": return { bg: "bg-severity-critical", text: "text-severity-critical" }
+  //     case "high": return { bg: "bg-severity-high", text: "text-severity-high" }
+  //     case "medium": return { bg: "bg-severity-medium", text: "text-severity-medium" }
+  //     case "low": return { bg: "bg-severity-low", text: "text-severity-low" }
+  //     default: return { bg: "bg-muted", text: "text-muted-foreground" }
+  //   }
+  // }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "detected": return "bg-neon-red"
-      case "in progress": return "bg-neon-yellow" // closest to orange
-      case "resolved": return "bg-neon-green"
-      default: return "bg-muted"
-    }
-  }
+  // const getStatusColor = (status: string) => {
+  //   switch (status) {
+  //     case "detected": return "bg-neon-red"
+  //     case "in progress": return "bg-neon-yellow" // closest to orange
+  //     case "resolved": return "bg-neon-green"
+  //     default: return "bg-muted"
+  //   }
+  // }
 
   const createCustomIcon = (violation: PollutionReport) => {
-    const statusColorClass = getStatusColor(violation.status)
+    // const statusColorClass = getStatusColor(violation.status)
     // We can't use Tailwind classes directly in L.divIcon html string easily without pre-processing styles or using inline styles if we want exact tailwind values.
     // However, we can use a class and let standard application CSS handle it, or standard inline styles.
     // Let's use inline styles with mapped colors for simplicity in the HTML string, or relying on global classes if available.
