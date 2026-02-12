@@ -16,7 +16,7 @@ interface NewsItem {
     url: string
 }
 
-const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 
 export function NewsSection() {
     const [news, setNews] = useState<NewsItem[]>([])
