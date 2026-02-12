@@ -18,6 +18,7 @@ import { AlertFeed } from "./alert-feed"
 import { NewsSection } from "./news-section"
 
 const COLORS = ['#22c55e', '#64748b', '#ef4444']; // green, slate, red
+const API_KEY = import.meta.env.VITE_API_URL;
 
 export function PulseDashboard() {
   const [report, setReport] = useState<DashboardReport | null>(null)
@@ -70,7 +71,7 @@ export function PulseDashboard() {
       const aqiPromise = fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${latitude}&longitude=${longitude}&current=us_aqi`)
 
       // 3. Fetch City Name via our backend proxy
-      const geoPromise = fetch(`http://localhost:8000/api/pollution/geodecode?lat=${latitude}&lon=${longitude}`)
+      const geoPromise = fetch(`${API_KEY}/api/pollution/geodecode?lat=${latitude}&lon=${longitude}`)
 
       const [aqiRes, geoRes] = await Promise.all([aqiPromise, geoPromise])
       const aqiDataRes = await aqiRes.json()
