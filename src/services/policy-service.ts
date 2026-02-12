@@ -29,9 +29,8 @@ export interface DashboardReport {
 
 import { db } from '../lib/firebase';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
-import { getApiBaseUrl } from '../config/api';
 
-const API_URL = `${getApiBaseUrl(8000)}/api/policy/analyze`;
+const API_URL = `${import.meta.env.VITE_API_URL}/api/policy/analyze`;
 
 export const DEMO_COMMENTS = [
   "The smoke from the Northside chemical plant is getting unbearable on Tuesday mornings. My kids have started coughing more.",

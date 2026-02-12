@@ -48,7 +48,7 @@ export function AILens() {
 
   const reverseGeocode = async (lat: number, lon: number) => {
     try {
-      const baseUrl = getApiBaseUrl(8000);
+      const baseUrl = getApiBaseUrl();
       const response = await fetch(
         `${baseUrl}/api/pollution/geodecode?lat=${lat}&lon=${lon}`
       );
