@@ -16,7 +16,7 @@ interface NewsItem {
     url: string
 }
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+const API_URL = import.meta.env.VITE_API_URL;
 
 export function NewsSection() {
     const [news, setNews] = useState<NewsItem[]>([])
@@ -29,7 +29,7 @@ export function NewsSection() {
 
         try {
             // Add timestamp to bypass browser caching
-            const response = await fetch(`${API_KEY}/api/pollution/news?t=${Date.now()}`, {
+            const response = await fetch(`${API_URL}/api/pollution/news?t=${Date.now()}`, {
                 cache: 'no-store'
             })
             if (!response.ok) throw new Error("Failed to fetch news")
