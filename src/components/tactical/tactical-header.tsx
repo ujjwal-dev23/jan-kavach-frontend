@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Signal } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Signal } from "lucide-react";
 
 interface TacticalHeaderProps {
-  onExit: () => void
+  onExit: () => void;
 }
 
 export function TacticalHeader({ onExit }: TacticalHeaderProps) {
   return (
-    <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
+    <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border pt-[env(safe-area-inset-top)]">
       <div className="flex items-center justify-between px-4 h-14">
         {/* Exit button */}
         <Button
@@ -25,12 +25,14 @@ export function TacticalHeader({ onExit }: TacticalHeaderProps) {
         {/* Center - System status */}
         <div className="flex items-center gap-2">
           <Signal className="w-4 h-4 text-neon-green animate-pulse" />
-          <span className="font-mono text-xs text-neon-green tracking-wider">JAN-KAVACH ACTIVE</span>
+          <span className="font-mono text-xs text-neon-green tracking-wider">
+            JAN-KAVACH ACTIVE
+          </span>
         </div>
 
         {/* Placeholder for balance */}
         <div className="w-20" />
       </div>
     </header>
-  )
+  );
 }
